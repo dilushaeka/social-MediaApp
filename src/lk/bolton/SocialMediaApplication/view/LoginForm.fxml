@@ -57,7 +57,7 @@
                   </graphic>
                </JFXButton>
                <Label layoutX="143.0" layoutY="491.0" prefHeight="21.0" prefWidth="265.0" text="You dont have an account click below" />
-               <JFXButton fx:id="btnSignUp" layoutX="276.0" layoutY="512.0" onAction="#SignUpOnAction" prefHeight="31.0" prefWidth="129.0" text="Sign Up" textFill="#2be15e" />
+               <JFXButton fx:id="btnSignUp" layoutX="276.0" layoutY="512.0" onAction="#SignUpOnAction" prefHeight="31.0" prefWidth="129.0" text="" textFill="#2be15e" />
             </children>
             <effect>
                <DropShadow />

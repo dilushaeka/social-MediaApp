@@ -44,7 +44,7 @@ public class PostController {
     private void initialize() {
     }
 
-    public String generateNextUserID() {
+    public int generateNextUserID() {
         int nextUserID;
         int lastUserID = 0;
 
@@ -72,7 +72,8 @@ public class PostController {
             numericPart++; // Increment the ID
 
             // Format the new ID with leading zeros (up to 4 digits)
-            nextUserID = format("%04d", numericPart);
+            String formattedUserID = String.format("%04d", numericPart);
+            nextUserID = Integer.parseInt(formattedUserID);
         }
 
         System.out.println("Generated next User ID: " + nextUserID);
@@ -80,7 +81,7 @@ public class PostController {
     }
 
 
-    String nextPostID = generateNextUserID();
+    int nextPostID = generateNextUserID();
 
     @FXML
     private void onCreatePostClicked() {
@@ -91,10 +92,11 @@ public class PostController {
             return;
         }
 
-        PostDTO post = new PostDTO(nextPostID,loggedInUserID,content,new Date());
-//        post.setCastID(loggedInUserID);
-//        post.setPostContent(content);
-//        post.setPostDate();
+        PostDTO post = new PostDTO(
+                nextPostID,
+                loggedInUserID,
+                content,
+                new Date());
 
         try {
             postBO.addPost(post);

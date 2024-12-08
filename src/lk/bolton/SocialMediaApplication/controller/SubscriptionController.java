@@ -31,7 +31,7 @@ public class SubscriptionController {
 
     private String loggedInUserID;
 
-    public SubscriptionController() {
+    public SubscriptionController() throws SQLException {
         subscriptionBO = new SubscriptionBOImpl();
     }
 

@@ -34,7 +34,7 @@ import java.sql.SQLException;
 
 
 public class DBConnection {
-    private Connection connection;
+    private static Connection connection;
 
     private DBConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -61,7 +61,7 @@ public class DBConnection {
         if (connection == null || connection.isClosed()) {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/socialmedia", "root", "1234");
         }
-        return this.connection;
+        return connection;
     }
 
     public void closeConnection() {

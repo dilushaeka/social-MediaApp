@@ -28,6 +28,7 @@ import static javafx.scene.paint.Color.TRANSPARENT;
     public Pane context;
     public JFXButton dtnDashBoard;
     public AnchorPane root1;
+    public JFXButton btnDashBoard;
 
     Parent root;
 
@@ -41,7 +42,7 @@ import static javafx.scene.paint.Color.TRANSPARENT;
     }
 
     public void DashBoardOnAction() throws IOException {
-        setUi("DashboardForm");
+        setUi("HomePageForm");
         new FadeIn(context).play();
 
     }
